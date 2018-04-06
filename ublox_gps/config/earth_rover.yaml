@@ -21,6 +21,10 @@ fix_mode: auto
 enable_ppp: false           # Not supported by C94-M8P
 dr_limit: 0
 
+usb:
+  in: 27
+  out: 27
+
 uart1:
   baudrate: 115200           # C94-M8P specific
   in: 5                     # RTCM 3
