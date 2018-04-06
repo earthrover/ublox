@@ -513,14 +513,13 @@ void UbloxNode::initializeIo() {
       throw std::runtime_error("Protocol '" + proto + "' is unsupported");
     }
   } else {
-//    gps.initializeSerial(device_, baudrate_, uart_in_, uart_out_);
+    gps.initializeSerial(device_, baudrate_, uart_in_, uart_out_);
   }
 }
 
 void UbloxNode::initialize() {
   // Params must be set before initializing IO
   getRosParams();
-  // EARTH_ROVER HACK
   initializeIo();
   // Must process Mon VER before setting firmware/hardware params
   processMonVer();
@@ -533,9 +532,8 @@ void UbloxNode::initialize() {
     components_[i]->getRosParams();
   // Do this last
   initializeRosDiagnostics();
-    // EARTH_ROVER HACK
-//  if (configureUblox()) {
-  if (true) {
+
+  if (configureUblox()) {
     ROS_INFO("U-Blox configured successfully.");
     // Subscribe to all U-Blox messages
     subscribe();
