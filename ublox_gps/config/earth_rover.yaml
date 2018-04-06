@@ -7,7 +7,7 @@ save:
                             # Manager, Antenna, and Logging Configuration
   device: 4                 # Save to EEPROM
 
-device: /dev/ttyACM0
+device: /dev/serial/by-id/usb-u-blox_AG_-_www.u-blox.com_u-blox_GNSS_receiver-if00
 tmode3: 0
 frame_id: gps
 rate: 4                     # in Hz
@@ -21,15 +21,6 @@ dynamic_model: automotive    # Airborne < 2G, 2D fix not supported (3D only),
 fix_mode: auto
 enable_ppp: false           # Not supported by C94-M8P
 dr_limit: 0
-
-usb:
-  in: 27
-  out: 27
-
-uart1:
-  baudrate: 115200           # C94-M8P specific
-  in: 5                     # RTCM 3
-  out: 0                    # No UART out for rover
 
 gnss:
   glonass: true             # Supported by C94-M8P
