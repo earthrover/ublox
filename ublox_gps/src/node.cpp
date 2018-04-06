@@ -521,7 +521,7 @@ void UbloxNode::initialize() {
   // Params must be set before initializing IO
   getRosParams();
   // EARTH_ROVER HACK
-  //initializeIo();
+  initializeIo();
   // Must process Mon VER before setting firmware/hardware params
   processMonVer();
   if(protocol_version_ <= 14) {
