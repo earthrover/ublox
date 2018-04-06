@@ -498,6 +498,7 @@ void UbloxNode::configureInf() {
 }
 
 void UbloxNode::initializeIo() {
+
   boost::smatch match;
   if (boost::regex_match(device_, match,
                          boost::regex("(tcp|udp)://(.+):(\\d+)"))) {
@@ -519,7 +520,8 @@ void UbloxNode::initializeIo() {
 void UbloxNode::initialize() {
   // Params must be set before initializing IO
   getRosParams();
-  initializeIo();
+  // EARTH_ROVER HACK
+  //initializeIo();
   // Must process Mon VER before setting firmware/hardware params
   processMonVer();
   if(protocol_version_ <= 14) {
@@ -531,8 +533,9 @@ void UbloxNode::initialize() {
     components_[i]->getRosParams();
   // Do this last
   initializeRosDiagnostics();
-
-  if (configureUblox()) {
+    // EARTH_ROVER HACK
+//  if (configureUblox()) {
+  if (true) {
     ROS_INFO("U-Blox configured successfully.");
     // Subscribe to all U-Blox messages
     subscribe();
@@ -1081,6 +1084,7 @@ void UbloxFirmware8::getRosParams() {
 
 
 bool UbloxFirmware8::configureUblox() {
+
   if(clear_bbr_) {
     // clear flash memory
     if(!gps.clearBbr())
