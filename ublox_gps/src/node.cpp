@@ -513,7 +513,7 @@ void UbloxNode::initializeIo() {
       throw std::runtime_error("Protocol '" + proto + "' is unsupported");
     }
   } else {
-    gps.initializeSerial(device_, baudrate_, uart_in_, uart_out_);
+//    gps.initializeSerial(device_, baudrate_, uart_in_, uart_out_);
   }
 }
 
