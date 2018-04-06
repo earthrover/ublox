@@ -513,7 +513,7 @@ void UbloxNode::initializeIo() {
       throw std::runtime_error("Protocol '" + proto + "' is unsupported");
     }
   } else {
-//    gps.initializeSerial(device_, baudrate_, uart_in_, uart_out_);
+    gps.initializeSerial(device_, baudrate_, uart_in_, uart_out_);
   }
 }
 
@@ -535,7 +535,7 @@ void UbloxNode::initialize() {
 
   if (configureUblox()) {
     ROS_INFO("U-Blox configured successfully.");
-    // Subscribe to all U-Blox messages
+    // Subscribe to all U-Blox messagesfgps
     subscribe();
     // Configure INF messages (needs INF params, call after subscribing)
     configureInf();
