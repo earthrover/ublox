@@ -317,7 +317,8 @@ bool Gps::configUart1(unsigned int baudrate, uint16_t in_proto_mask,
             baudrate, in_proto_mask, out_proto_mask);
 
   CfgPRT port;
-  port.portID = CfgPRT::PORT_ID_UART1;
+//  port.portID = CfgPRT::PORT_ID_UART1;
+  port.portID = CfgPRT::PORT_ID_USB;
   port.baudRate = baudrate;
   port.mode = CfgPRT::MODE_RESERVED1 | CfgPRT::MODE_CHAR_LEN_8BIT |
               CfgPRT::MODE_PARITY_NO | CfgPRT::MODE_STOP_BITS_1;
