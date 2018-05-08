@@ -22,6 +22,11 @@ fix_mode: auto
 enable_ppp: false           # Not supported by C94-M8P
 dr_limit: 0
 
+uart1:
+  baudrate: 115200           # C94-M8P specific
+  in: 5                     # RTCM 3
+  out: 0                    # No UART out for rover
+
 gnss:
   glonass: true             # Supported by C94-M8P
   beidou: false             # Supported by C94-M8P
