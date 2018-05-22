@@ -317,7 +317,9 @@ bool Gps::configUart1(unsigned int baudrate, uint16_t in_proto_mask,
             baudrate, in_proto_mask, out_proto_mask);
 
   CfgPRT port;
+ // TODO tidy up
 //  port.portID = CfgPRT::PORT_ID_UART1;
+// this is a fix specific to Earth rover - we are using USB for the primary serial not uart
   port.portID = CfgPRT::PORT_ID_USB;
   port.baudRate = baudrate;
   port.mode = CfgPRT::MODE_RESERVED1 | CfgPRT::MODE_CHAR_LEN_8BIT |
