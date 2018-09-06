@@ -8,6 +8,7 @@ save:
   device: 4                 # Save to EEPROM
 
 device: /dev/serial/by-id/usb-u-blox_AG_-_www.u-blox.com_u-blox_GNSS_receiver-if00
+
 tmode3: 0
 frame_id: gps
 rate: 4                     # in Hz
